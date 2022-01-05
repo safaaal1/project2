@@ -1,0 +1,30 @@
+base.html
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Ardit's web app</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('categories') }}">categories</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
+
+
+{% extends "base.html" %}
+{% block content %}
+  <div class="categories">
+    <h1>A Python product</h1>
+    <p>This website was built with Python via the Flask framework.</p>
+  </div>
+{% endblock %}
+

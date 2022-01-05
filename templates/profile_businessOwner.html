@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+        <form method="POST">
+            <button type="button" class="btn btn-primary">
+    <a href="{% url 'contact' %}">Request for publication of advertisements</a>
+    </button>
+
+    <button type="button" class="btn btn-info">
+    <a href="{% url 'rules' %}">rules</a>
+    </button>
+
+    <button type="button" class="btn btn-dark">
+    <a href="{% url 'about_place' %}">about</a>
+    </button>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

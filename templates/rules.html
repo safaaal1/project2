@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="card">
+<h2 style="text-align:center"> Rules </h2>
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+
+    <img class="rounded-circle account-img" style="width:100%" src="{{ user.profile.image.url }}">
+    <div class="media-body">
+        <h1 class="account-heading">{{ user.profile.rules}}</h1>
+    </div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

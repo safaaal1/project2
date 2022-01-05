@@ -1,0 +1,84 @@
+{% load static %}
+{% block style %}
+    <style>
+
+
+        .sidenav{
+            padding: 8px 100px 8px 100px;
+            font-size: 25px;
+            color: #FF7F50;
+            background-color: #DBF9FC;
+            margin: auto;
+            display: block;
+            
+        }
+        .main {
+            background-color: #DBF9FC;
+            text-align: center;
+            
+            
+            
+        }
+       
+        
+        
+        
+        
+        
+    </style>
+    {% endblock %}
+    
+    
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="{% static 'images/far.jpg' %}" type="image/jpg" sizes="16x16">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            
+            <link type="text/css" rel="stylesheet" href="{% static 'css/login.css' %}">
+            
+            <title>Login</title>
+        </head>
+    </style>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h3>Login Page</h3>
+            <p>Login from here to access.</p>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" name="username" class="form-control" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    {% for m in messages %}
+                    <h4 style="color: red;">{{m}}</h4>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-black">Login</button>
+                </form>
+                <div>
+                    New here?<a href="{% url 'Register' %}" >Register</a>
+                </div>
+
+           </div>
+        </div>
+        
+    </div>
+</body>
+</html>

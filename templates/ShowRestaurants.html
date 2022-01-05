@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block title %} <center>The Restaurants On This Website </center> {% endblock %}
+{% block style %}
+{% load static %}
+  <style>
+ .div1{
+          position: absolute;
+         top: 30%;
+         left: 10%;
+         width: 80%;
+      }
+
+  </style>
+{% endblock %}
+  {% block content %}
+        <br>
+    <div class="div1">
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Restaurants Table</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Address</th>
+							<th>Capacity</th>
+							<th>Population</th>
+
+						</tr>
+
+						{% for i in blogs %}
+                               {% if i.type == "Restaurant" %}
+							          <tr>
+								        <td>{{i.title}}</td>
+								        <td>{{i.address}}</td>
+										  <td>{{i.capacity}}</td>
+										  <td>{{i.population}}</td>
+
+							          </tr>
+                               {% endif %}
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+   {% endblock %}

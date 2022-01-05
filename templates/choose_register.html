@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+{% block title %} {% endblock %}
+{% load static %}
+{% block style %}
+<html lang="en">
+<head xmlns="http://www.w3.org/1999/html">
+  <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+   * {
+  box-sizing: border-box;
+}
+.container1{
+        height: 150px;
+    width: 450px;
+    background-color: #1845ad;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+    </style>
+{% endblock %}
+{% block content %}
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="POST" action="">
+        {% csrf_token %}
+         <div class="container1">
+        <table id="myTable">
+  <tr class="header">
+    <th style="width:60%;"><a type="button" class="btn btn-block" href="{% url 'Register' %}">I am a visitor</a></th>
+    <th style="width:40%;"><a type="button" class="btn btn-block" href="{% url 'Register' %}">I am a business owner</a></th>
+  </tr>
+        </table>
+         </div>
+    </form>
+</body>
+{%endblock%}
+</head>
+</html>

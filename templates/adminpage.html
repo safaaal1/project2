@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %} <center><b>Admin's LogIn</b> </center>{% endblock %}
+{% block style %}
+{% load static %}
+    <style>
+        .main {
+            text-align: center;
+            position: absolute;
+            top: 33%;
+            left: 35%;
+            width: 60%;
+
+        }
+
+    </style>
+
+    {% endblock %}
+
+
+
+        {% block content %}
+<body>
+
+
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" name="username" class="form-control" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    {% for m in messages %}
+                    <h4 style="color: red;">{{m}}</h4>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-black">Login</button>
+                </form>
+
+
+           </div>
+        </div>
+
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>covid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    {% block style %}{% endblock %}
+
+</head>
+<body>
+  
+  
+  
+  <nav class="navbar navbar-default">
+      
+    </a>
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'home' %}">Covid</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'To_Use' %}"> To Use </a></li>
+        <li><a href="{% url 'ins' %}"> instructions </a></li>
+        <li><a href="{% url 'about' %}"> about </a></li>
+        <li><a href="{% url 'contact' %}"> contact us </a></li>
+        <li><a href="{% url 'menu' %}"> menu </a></li>
+        <li><a href="{% url 'adminpage' %}"> admin </a></li>
+
+        <li><a style="float:right;" href="{% url 'logout' %}" > Logout</a></li>
+        <li><a style="float:right;" href="{% url 'Login_BusinessOwner' %}" >Login Business Owner</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+  
+  <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large"
+    onclick="w3_close()">Close &times;</button>
+    <li><a href="{% url 'Restaurants' %}"> Restaurants</a></li>
+
+    <li><a href="{% url 'HealthAndCare' %}"> Health&Care</a></li>
+
+    <li><a href="{% url 'Markets' %}"> Markets</a></li>
+
+
+
+  </div>
+
+  <div>
+    <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+    <div >
+      <h3>{% block title %}{% endblock %}</h3>
+      <p>{% block content %}{% endblock %}</p>
+    </div>
+  </div>
+    <script>
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+  
+
+</body>
+</html>
+
+
+
+
+
+
+

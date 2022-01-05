@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block title %} <center>The Users On This Website </center> {% endblock %}
+{% block style %}
+{% load static %}
+
+  <style>
+ .div1{
+          position: absolute;
+         top: 30%;
+         left: 10%;
+         width: 80%;
+
+
+      }
+
+
+
+  </style>
+{% endblock %}
+  {% block content %}
+        <br>
+    <div class="div1">
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Users Table</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+							<th>Last Login</th>
+						</tr>
+
+						{% for i in users %}
+
+							 <tr>
+								<td>{{i.username}}</td>
+								<td>{{i.last_name}}</td>
+								<td>{{i.email}}</td>
+								<td>{{i.last_login}}</td>
+							 </tr>
+
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+   {% endblock %}
